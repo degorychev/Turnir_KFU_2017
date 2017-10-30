@@ -10,11 +10,11 @@ namespace good_group
     {
         static void Main(string[] args)
         {
-            FindD("1 2 3 4 5 6");
-            Console.ReadKey();
-        }
-        static public bool FindD(string input)
-        {
+            string par = "9 2";
+            int k = int.Parse(par.Split(' ')[1]);
+            string input = "5 1 1 1 2 2 2 9 9";
+
+            int count = 0;
             string[] ms = input.Split(' ');
             int SubStringCount = ms.Count();
             String bstr = "";
@@ -34,8 +34,9 @@ namespace good_group
                     {
                         bstr = bstr.Trim();
                         ++j;
-
-                        Console.WriteLine(bstr);
+                        if (iftrue(bstr, k))
+                            count++;
+                        //Console.WriteLine(bstr);
 
                         bstr = "";
                         h = 0;
@@ -43,6 +44,32 @@ namespace good_group
                     }
                 }
             } while (perDel > 1);
+            Console.WriteLine(count);
+            Console.ReadKey();
+        }
+
+        static bool iftrue(string input, int k)
+        {
+            List<int> workint = input.Split(' ').Select(int.Parse).ToList();
+            workint.Sort();
+            Console.WriteLine();
+            foreach (int i in workint)
+                Console.Write(i + " ");
+
+            int count = 0;
+            int memory = 0;
+            foreach (int i in workint)
+            {
+                if (i == memory)
+                    count++;
+                else
+                    count = 0;
+
+                if (count == k)
+                    return false;
+                memory = i;
+            }
+            Console.Write("+++");
             return true;
         }
     }
