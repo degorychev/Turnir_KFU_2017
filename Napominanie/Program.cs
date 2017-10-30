@@ -10,21 +10,19 @@ namespace Napominanie
     {
         static void Main(string[] args)
         {
-            string inputdatetime = Console.ReadLine();
+            DateTime development = DateTime.Parse(Console.ReadLine());
             int n = int.Parse(Console.ReadLine());
 
-            List<string> napominaniya = new List<string>();
-            for (int i=0; i<n; i++)
-                napominaniya.Add(Console.ReadLine());
+            List<string[]> napominaniya = new List<string[]>();
 
-            DateTime development = DateTime.Parse(inputdatetime);
+            for (int i = 0; i < n; i++)
+                napominaniya.Add(Console.ReadLine().Split(' '));
 
-            foreach(string nap in napominaniya)
+            for(int i=0; i<n; i++)
             {
-                string[] str = nap.Split(' ');
-                int d = int.Parse(str[0]);
-                int h = int.Parse(str[1]);
-                int m = int.Parse(str[2]);
+                int d = int.Parse(napominaniya[i][0]);
+                int h = int.Parse(napominaniya[i][1]);
+                int m = int.Parse(napominaniya[i][2]);
 
                 DateTime newdate = development.AddDays(-d).AddHours(-h).AddMinutes(-m);
                 Console.WriteLine(newdate.ToString("dd.MM.yyyy HH:mm"));
