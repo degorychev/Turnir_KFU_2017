@@ -27,10 +27,10 @@ namespace Napominanie
                 int m = int.Parse(str[2]);
 
                 DateTime newdate = development.AddDays(-d).AddHours(-h).AddMinutes(-m);
-                Console.WriteLine(newdate.ToShortDateString() + " " + newdate.ToShortTimeString());
+                Console.WriteLine(newdate.ToString("dd.MM.yyyy HH:mm"));
             }
-            
-            //Console.ReadKey();
+
+            Console.ReadKey();
         }
     }
 }
