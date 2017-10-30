@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ping-Ping", "Ping-Ping\Ping
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "good_group", "good_group\good_group.csproj", "{6826B4D2-0D52-4474-B45B-2968F3EC4A24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sokrashenie", "Sokrashenie\Sokrashenie.csproj", "{AAD19963-7CCA-4AE1-8D35-F63CCF4CB746}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6826B4D2-0D52-4474-B45B-2968F3EC4A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6826B4D2-0D52-4474-B45B-2968F3EC4A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6826B4D2-0D52-4474-B45B-2968F3EC4A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD19963-7CCA-4AE1-8D35-F63CCF4CB746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD19963-7CCA-4AE1-8D35-F63CCF4CB746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD19963-7CCA-4AE1-8D35-F63CCF4CB746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD19963-7CCA-4AE1-8D35-F63CCF4CB746}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
