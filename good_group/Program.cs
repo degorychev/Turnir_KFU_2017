@@ -51,8 +51,9 @@ namespace good_group
         static bool iftrue(string input, int k)
         {
             List<int> workint = input.Split(' ').Select(int.Parse).ToList();
+            Console.Write(input+ " || ");
             workint.Sort();
-            Console.WriteLine();
+            //Console.WriteLine();
             foreach (int i in workint)
                 Console.Write(i + " ");
 
@@ -66,10 +67,13 @@ namespace good_group
                     count = 0;
 
                 if (count == k)
+                {
+                    Console.WriteLine("||---");
                     return false;
+                }
                 memory = i;
             }
-            Console.Write("+++");
+            Console.WriteLine("||+++");
             return true;
         }
     }
