@@ -1,23 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace test
+namespace zzz
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string file = "5 1 1 1 2 2 2 9 9";
-
-            char[] ch = file.ToCharArray().Distinct().ToArray();
-            for (int i = 0; i < ch.Length; i++)
-                if (ch[i] != ' ')
-                    Console.WriteLine("Символ: |{0}| Число повторений: |{1}|", ch[i], file.ToCharArray().Count(x => x == ch[i]));
+            string input = Console.ReadLine();
+            int m = int.Parse(Console.ReadLine());
+            Queue<int> que = new Queue<int>();
+            for (int i=0; i<m; i++)
+                que.Enqueue(int.Parse(Console.ReadLine()));
+            int len = input.Length;
+            while (que.Count>0)
+                Console.WriteLine(beauty(que.Dequeue(), len));
 
             Console.ReadKey();
+        }
+        static int beauty(int v, int length)
+        {
+            int sum = 0;
+            int buf = 1;
+            for (int i = 2; i <= (length - v + 1); i++)
+            {
+                sum += buf;
+                buf += i;
+            }
+            return sum;
         }
     }
 }
