@@ -21,21 +21,22 @@ namespace Sokrashenie
                 mass[i] = int.Parse(input[i]);
 
 
-            var min = 1f;
-            HashSet<int> currentSet = new HashSet<int>();
+            double min = 1;
+
+
+            HashSet<int> currentSet = new HashSet<int>();         
+
+
             for (var a = 0; a < n; a++)
             {
+                int niz = 1;
                 for (var b = a; b < n; b++)
                 {
-
                     currentSet.Add(mass[b]);
-
-                    Single newRes = currentSet.Count * 1f / (b - a + 1);
-                    
-
+                    double newRes = (double)currentSet.Count / (niz++);
                     if (newRes < min)
                         min = newRes;
-                    Console.Write(mass[b] + " | ");
+                    //Console.Write(mass[b] + " | ");
                 }
                 Console.WriteLine(" ДИЧЬ=" + min.ToString("0.000000", CultureInfo.GetCultureInfo("en-US")));
                 currentSet.Clear();
